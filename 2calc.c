@@ -18,8 +18,8 @@ int data_select(int M, float resistance[]){
     for(int i = 0; i < M; ++i){
         if(resistance[i] == NOT_AN_ELEMENT){
             for(int j = i+1; j < M; ++j){
-                float num = resistance[i];
-                resistance[i] = resistance[j];
+                float num = resistance[j-1];
+                resistance[j-1] = resistance[j];
                 resistance[j] = num;
             }
             ++preNewM;
