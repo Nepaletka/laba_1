@@ -7,7 +7,7 @@
 int data_select(int M, float resistance[]){
     float resistance_average = sr_arifm(M, resistance);
     for(int i = 0; i < M; ++i){
-        float tmp = abs(resistance[i] - resistance_average)/resistance_average;
+        float tmp = fabs(resistance[i] - resistance_average)/resistance_average;
         if(tmp > 0.03){
             resistance[i] = NOT_AN_ELEMENT;
         }
@@ -18,9 +18,9 @@ int data_select(int M, float resistance[]){
     for(int i = 0; i < M; ++i){
         if(resistance[i] == NOT_AN_ELEMENT){
             for(int j = i+1; j < M; ++j){
-                float num = a[i];
-                a[i] = a[j];
-                a[j] = num;
+                float num = resistance[i];
+                resistance[i] = resistance[j];
+                resistance[j] = num;
             }
             ++preNewM;
         }
