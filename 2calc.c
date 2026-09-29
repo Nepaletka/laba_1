@@ -3,6 +3,8 @@
 
 #define NOT_AN_ELEMENT -456.9
 
+float sr_arifm(int M, float resistance[]);
+
 int data_select(int M, float resistance[]){
     float resistance_average = sr_arifm(M, resistance);
     for(int i = 0; i < M; ++i){
