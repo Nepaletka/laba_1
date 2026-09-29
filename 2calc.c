@@ -1,32 +1,23 @@
 #include <stdio.h>
 #include <math.h>
 
-#define NOT_AN_ELEMENT -456
 
 float sr_arifm(int M, float resistance[]);
 
 int data_select(int M, float resistance[]){
     float resistance_average = sr_arifm(M, resistance);
+
+    int newM = 0;
+
     for(int i = 0; i < M; ++i){
         float tmp = fabs(resistance[i] - resistance_average)/resistance_average;
         if(tmp > 0.03){
-            resistance[i] = NOT_AN_ELEMENT;
+            continue;
         }
+        resistance[newM++] = resistance[i];
     }
 
-    int preNewM = 0;
-
-    for(int i = 0; i < M; ++i){
-        if(int(resistance[i]) == int(NOT_AN_ELEMENT)){
-            for(int j = i+1; j < M; ++j){
-                float num = resistance[j-1];
-                resistance[j-1] = resistance[j];
-                resistance[j] = num;
-            }
-            ++preNewM;
-        }
-    }
-    return M - preNewM;
+    return newM;
 }
 
 float sr_arifm(int M, float resistance[]){
