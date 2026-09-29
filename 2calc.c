@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <math.h>
 
-#define NOT_AN_ELEMENT -456.9;
+#define NOT_AN_ELEMENT -456.9
 
 int data_select(int M, float resistance[]){
     float resistance_average = sr_arifm(M, resistance);
