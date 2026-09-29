@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <math.h>
 
-#define NOT_AN_ELEMENT -456.9
+#define NOT_AN_ELEMENT -456
 
 float sr_arifm(int M, float resistance[]);
 
@@ -17,7 +17,7 @@ int data_select(int M, float resistance[]){
     int preNewM = 0;
 
     for(int i = 0; i < M; ++i){
-        if(resistance[i] == NOT_AN_ELEMENT){
+        if(int(resistance[i]) == int(NOT_AN_ELEMENT)){
             for(int j = i+1; j < M; ++j){
                 float num = resistance[j-1];
                 resistance[j-1] = resistance[j];
