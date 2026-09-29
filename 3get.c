@@ -21,7 +21,7 @@ float result(int K, float *resistance) {
     }
     resistance_final /= K;
     deviation = calculate_deviation(resistance, resistance_final, K);
-    printf("%f ± %f", resistance_final, deviation);
+    printf("%f ± %f", resistance_final * 1000, deviation * 100);
     return resistance_final;
  
 }
