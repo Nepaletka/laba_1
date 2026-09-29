@@ -19,5 +19,11 @@ int main()
         return -1;
     }
     float resistance_final = result(k, resistance);
+    
+    if (!check(k, resistance, resistance_final)) {
+        printf("Something went wrong with calculations\n");
+        return -1;
+    }
+
     return 0;
 }
