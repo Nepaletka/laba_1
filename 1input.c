@@ -9,6 +9,8 @@ int preparation(float resistance[])
     int n = 0;
     while (scanf("%f %f\n", &i_v, &i_c) != EOF)
     {
+        if (n == 100)
+        break;
         voltage[n] = i_v;
         current[n] = i_c;
         n++;
