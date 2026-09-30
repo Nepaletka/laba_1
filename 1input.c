@@ -12,7 +12,7 @@ int preparation(float resistance[])
         if (n == 100)
         break;
         voltage[n] = i_v;
-        current[n] = i_c;
+        current[n] = i_c / 1000;
         n++;
     }
     for (int i = 0; i < n; i++)

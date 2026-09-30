@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "main.h"
 
 int check (int K, float resistance[], float resistance_final) {
@@ -5,9 +6,10 @@ int check (int K, float resistance[], float resistance_final) {
     for (int i = 0; i < K; i++) {
         summ += resistance[i] - resistance_final;
     }
-    float result = summ / K;
+    float linear_deviation = summ / K;
+    printf("%f\n", linear_deviation);
 
-    if ((-0.10 < result) && (result < 0.10)) {
+    if ((-0.10 < linear_deviation) && (linear_deviation < 0.10)) {
         return 1;
     }
     return 0;
