@@ -7,7 +7,7 @@ int preparation(float resistance[])
     float i_v = 0;
     float i_c = 0;
     int n = 0;
-    while (scanf("%f %f\n", &i_v, &i_c) != EOF)
+    while (scanf("%f%*c%f\n", &i_v, &i_c) != EOF)
     {
         if (n == 100)
         break;
